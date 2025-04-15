@@ -67,6 +67,6 @@ export default defineConfig(configs)
 
 ## Motivation
 
-The idea is that certain directives, such as `"use client"` [must be present at the top of a module file](https://react.dev/reference/rsc/use-client#use-client). For library authors, this poses unique challenges as during the build process, `tsup` can fail to place directives at the top of the module, or sometimes remove the directives altogether. It becomes additionally frustrating with code-splitting enabled as other plugins or "banner" solutions still can fail to get "use client" at the very top of the resulting build modules.
+The idea is that certain directives, such as `"use client"` [must be present at the top of a module file](https://react.dev/reference/rsc/use-client#use-client). For library authors in particular, this poses unique challenges as during the build process, `tsup` can fail to place directives at the top of the module, or sometimes remove the directives altogether. It becomes additionally frustrating with code-splitting enabled as other plugins or "banner" solutions still can fail to get "use client" at the very top of the resulting build modules.
 
 An example use-case would be someone authoring a library they wish to distribute that contains both interfaces they want to be available to the server, and client-only React components. Using this plugin, the user can configure tsup to still leverage tsup's code-splitting to reduce total bundle size while also specifying exactly which dist files should be marked with `use-client`.
