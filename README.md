@@ -2,7 +2,7 @@
 
 This plugin is designed to be an incredibly lightweight dependency that allows users to specify directives to be explicitly prepended to build files that come out of tsup.
 
-The advantage of this plugin is that it still works with tsup's [code splitting](https://tsup.egoist.dev/#code-splitting) which can cause other solutions that handle directives to fail. Code splitting can be desirable for library authors who want to reduce their overall bundle size and efficiency.
+The advantage of this plugin is that it still works with tsup's [code splitting](https://tsup.egoist.dev/#code-splitting) and minifier which can cause other solutions that handle directives to fail. Code splitting can be desirable for library authors who want to reduce their overall bundle size and efficiency.
 
 This is most useful for including the `"use client"` directive, but is generalized to work for any directive. It is designed to be especially useful for library authors where the author might want to specify directives for specific files, or file paths, their dist.
 
@@ -32,6 +32,7 @@ const configs: Options[] = [
   {
     name: 'build',
     splitting: true,
+    // Code split shared code across the core and react packages
     entry: {
       'core': 'packages/core/src/index.ts',
       'react': 'packages/react/src/index.ts',
