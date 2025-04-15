@@ -8,6 +8,13 @@ This is most useful for including the `"use client"` directive, but is generaliz
 
 ## Usage
 
+To install:
+
+```
+npm install -D tsup-plugin-prepend-directive
+```
+
+### Example
 Below is an example of how this plugin can be used to specify certain dist files containing "client only" React components to be prepended with the `"use client"` directive.
 
 This works even if splitting is enabled.
