@@ -1,4 +1,4 @@
-# tsup-prepend-directive-plugin
+# tsup-plugin-prepend-directive
 
 This plugin is designed to be an incredibly lightweight dependency that allows users to specify directives to be explicitly prepended to build files that come out of tsup.
 

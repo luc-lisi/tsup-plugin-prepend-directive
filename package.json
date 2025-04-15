@@ -1,6 +1,6 @@
 {
   "name": "tsup-plugin-prepend-directive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tsup plugin that allows users to specify directives to be explicitly prepended to build files.",
   "author": "Luc Lisi <llisi@mozilla.com>",
   "keywords": [
