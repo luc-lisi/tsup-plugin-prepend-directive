@@ -1,10 +1,10 @@
 # tsup-plugin-prepend-directive
 
-This plugin is designed to be an incredibly lightweight dependency that allows users to specify directives to be explicitly prepended to build files that come out of tsup.
+This plugin is designed to be a lightweight dependency that allows users to specify directives they want prepended to specific build files that come out of tsup.
 
-The advantage of this plugin is that it still works with tsup's [code splitting](https://tsup.egoist.dev/#code-splitting) and minifier which can cause other solutions that handle directives to fail. Code splitting can be desirable for library authors who want to reduce their overall bundle size and efficiency.
+The advantage of this plugin is that it still works with tsup's [code splitting](https://tsup.egoist.dev/#code-splitting) and minifier which can cause other solutions that handle directives to fail. Code splitting can be especially desirable for library authors who want to reduce their overall bundle size and efficiency.
 
-This is most useful for including the `"use client"` directive, but is generalized to work for any directive. It is designed to be especially useful for library authors where the author might want to specify directives for specific files, or file paths, their dist.
+This plugin is primarily useful for including the `"use client"` directive, but is generalized to work for any directive.
 
 ## Usage
 
@@ -15,9 +15,7 @@ npm install -D tsup-plugin-prepend-directive
 ```
 
 ### Example
-Below is an example of how this plugin can be used to specify certain dist files containing "client only" React components to be prepended with the `"use client"` directive.
-
-This works even if splitting is enabled.
+Below is an example of how this plugin can be used to specify a group of dist files we want prepended with `"use client"` while leaving other files that are safe for server-side use unchanged. In this example, we can enable both minificaiton and code splitting without issue.
 
 ```typescript
 // tsup.config.ts
